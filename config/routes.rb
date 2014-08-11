@@ -4,8 +4,7 @@ Jbloccit::Application.routes.draw do
   resources :topics do
     resources :posts, except: [:index]
   end
-
-
+  resources :users, only: [:update]
   get 'about' => 'welcome#about'
   root to: 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
