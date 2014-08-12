@@ -31,16 +31,16 @@ class TopicsController < ApplicationController
      end
    end
  
-   def update
-     @topic = Topic.find(params[:id])
-     authorize @topic
-     if @topic.update_attributes(topic_params)
-       redirect_to @topic
-     else
-       flash[:error] = "Error saving topic. Please try again"
-       render :edit
-     end
-   end
+  def update
+    @topic = Topic.find(params[:id])
+    authorize @topic
+      if @topic.update_attributes(topic_params)
+      redirect_to @topic
+    else
+      flash[:error] = "Error saving topic. Please try again"
+      render :edit
+    end
+  end
 
   private
 
